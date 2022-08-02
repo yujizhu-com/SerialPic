@@ -337,7 +337,7 @@ static BOOL configured = FALSE;
 #else
     UInt32 isPlaying = 0;
     UInt32 varSize = sizeof(isPlaying);
-    AudioSessionGetProperty (kAudioSessionProperty_OtherAudioIsPlaying, &varSize, &isPlaying);
+    ccAudioSessionGetProperty (cckAudioSessionProperty_OtherAudioIsPlaying, &varSize, &isPlaying);
     return (isPlaying != 0);
 #endif
 }
@@ -496,8 +496,8 @@ static BOOL configured = FALSE;
     CFStringRef newAudioRoute;
     UInt32 propertySize = sizeof (CFStringRef);
     
-    AudioSessionGetProperty (
-                             kAudioSessionProperty_AudioRoute,
+    ccAudioSessionGetProperty (
+                             cckAudioSessionProperty_AudioRoute,
                              &propertySize,
                              &newAudioRoute
                              );
